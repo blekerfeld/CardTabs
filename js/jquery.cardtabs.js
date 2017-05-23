@@ -11,8 +11,8 @@ jQuery.fn.cardTabs = function(){
 	var activeCount = 0;
 
 	function toggleTab(obj){
-		$('.' + mainClass + " .ctTab[data-tab='" + obj.data('tab') + "']").show();
-		$('.' + mainClass + " .ctTab[data-tab!='" + obj.data('tab') + "']").hide();
+		$('.' + mainClass + " div[data-tab='" + obj.data('tab') + "']").show();
+		$('.' + mainClass + " div[data-tab!='" + obj.data('tab') + "']").hide();
 	}
 
 	// Checking whether we have to set a tab as active
