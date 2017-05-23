@@ -1,0 +1,53 @@
+div.ctBar{
+	border-bottom: 1px solid #eaecef;
+	background: #fafbfc;
+}
+
+div.ctBar a{
+	padding: 5px;
+	padding-bottom: 1px;
+	border: 1px solid transparant;
+	color: #575b66;
+}
+
+div.ctBar a:first-child{
+	margin-left: 10px;
+}
+
+div.ctBar a:hover{
+	text-decoration: underline;
+}
+
+div.ctBar a.active{
+	border: 1px solid #eaecef;
+	border-bottom: none;
+	display: inline-block;
+	color: black;
+	font-weight: bold;
+	border-radius: 4px 4px 0px 0px;
+	padding-top: 6px;
+	margin-bottom: -10px;
+	background: #fff;
+}
+
+div.ctBar a.active:hover{
+	text-decoration: none;
+}
+
+div.ctBar.titles{
+	margin-top: -10px;
+}
+
+div.ctBar.titles a{
+	font-size: 17px;
+}
+
+div.ctTabs div.ctTab{
+	display: none;
+	border-top: none;
+	padding: 10px;
+}
+
+div.ctTabs div.ctTab:first-child{
+	display: block;
+}
