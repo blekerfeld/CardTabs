@@ -42,12 +42,12 @@ div.ctBar.titles a{
 	font-size: 17px;
 }
 
-div.ctTabs div.ctTab{
+div.ctTabs div{
 	display: none;
 	border-top: none;
 	padding: 10px;
 }
 
-div.ctTabs div.ctTab:first-child{
+div.ctTabs div:first-child{
 	display: block;
 }
