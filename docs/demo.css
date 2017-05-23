@@ -1,0 +1,14 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+html, body{
+	font-size: 14px;
+	font-family: Open Sans;
+}
+
+a{
+	cursor: pointer;
+}
+
+.holder{
+	margin: 0 auto;
+	width: 70%;
+}
