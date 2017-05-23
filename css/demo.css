@@ -7,3 +7,8 @@ html, body{
 a{
 	cursor: pointer;
 }
+
+.holder{
+	margin: 0 auto;
+	width: 70%;
+}
