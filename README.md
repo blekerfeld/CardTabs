@@ -17,22 +17,21 @@ Make sure that jQuery is loaded. Download `jquery.cardtabs.js` and `jquery.cardt
 
 ### HTML 
 
-The tabs html is very simple. There is one container with a tab - bar (`card-tabs-bar`) and a tab stack (`card-tabs-stack`). The actual tabs are divs, the `data-tab` attribute has to contain their name / ID. The links (a-elements) in the tab bar also have a `data-tab`-attribute with the corresponding tab ID.
+The html is very simple. There is one container, with the actual tabs as divs, the `data-tab` attribute has to contain their name. The links on the top are automatically generated.
+
+
 
 ```
 <div class='container'>
-	<div class='card-tabs-bar'>
-		<a data-tab='tab-one'>Tab one</a>
-		<a data-tab='tab-two'>Tab two</a>
-	</div>
-	<div class='card-tabs-stack'>
-		<div data-tab='tab-one'>
-			Contents of the first tab...
-		</div>
-		<div data-tab='tab-two'>
-			Contents of the second tab...
-		</div>
-	</div>
+    <div data-tab="Tab one">
+    	/* contents of the first tab...  */
+    </div>
+    <div data-tab="Tab two">
+        /* contents of the second tab...  */
+    </div>
+    <div data-tab="Tab three">
+        /* contents of the third tab...  */
+    </div>
 </div>
 
 ```
@@ -47,3 +46,18 @@ $('.container').cardTabs();
 </script>
 ```
 
+## Options
+
+### Manualy set the active tab
+It is very simple to load another tab as the active tab. Just give that tab `active` as class:
+
+```
+<div class='active' data-tab='Active tab'></div>
+```
+
+### Themes
+Some themes are included in card tabs, to use them they have to be defined in the javascript, like this:
+
+```
+$('.container').cardTabs({'theme': 'dark'});
+```

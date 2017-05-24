@@ -8,78 +8,127 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script type='text/javascript' src='jquery.cardtabs.js'></script>
     </head>
-    <body>
+    <body class='markdown-body'>
         <div class='holder'>
-        <h1>CardTabs demo</h1>
-    	<h2>Simple usage</h2>
-    	<div class='tabsholder1'>
-    		<div class='card-tabs-bar'>
-                <a data-tab="tab-1">Chapter 1</a>
-    			<a data-tab="tab-2">Chapter 2</a>
-            </div>
-            <div class='card-tabs-stack'>
-                <div data-tab="tab-1">
-                     <a name=1></a><h2>Introduction</h2>
-                     IF   you   happen  to  have  read  another  book  about
-                Christopher Robin, you may remember that he once had a swan (or
-                the swan had Christopher Robin, I don't know which) and that he
-                used to call this swan Pooh. That was a long time ago, and when
-                we said good-bye, we took the name with us, as we didn't  think
-                the  swan  would  want it any more. Well, when Edward Bear said
-                that he would like an exciting name all to himself, Christopher
-                Robin said at once, without stopping  to  think,  that  he  was
-                Winnie-the-Pooh.  And  he was. So, as I have explained the Pooh
-                part, I will now explain the rest of it.
-                <br>
-                <br> <img src="http://lib.ru/MILN/img00001.gif" width=174 height=175>
+        <a class='github' href='http://github.com/blekerfeld/CardTabs/'>Open on Github</a>
+        <h1>CardTabs</h1>
 
-                </div>
-                <div data-tab="tab-2">
-                <a name=1></a><h2>Chapter 2</h2>
-                    <br> EDWARD BEAR, known to his friends  as  Winnie-the-Pooh,
-                    or  Pooh  for  short,  was  walking through the forest one day,
-                    humming proudly to himself. He had made up a  little  hum  that
-                    very  morning, as he was doing his Stoutness Exercises in front
-                    of the glass: Tra-la-la, tra-la-la, as he stretched up as  high
-                    as  he could go, and then Tra-la-la, tra-la -- oh, help! -- la,
-                    as he tried to reach his toes. After breakfast he had  said  it
-                    over  and  over to himself until he had learnt it off by heart,
-                    and now he was humming it right through, properly. It went like
-                    this:
-                    <br> <i>
-                    <br> Tra-la-la, tra-la-la,
-                    <br> Tra-la-la, tra-la-la,
-                    <br> Rum-tum-tiddle-um-tum.
-                    <br> Tiddle-iddle, tiddle-iddle,
-                    <br> Tiddle-iddle, tiddle-iddle,
-                    <br> Rum-tum-tum-tiddle-um.
-                    <br> </i>
-                    <br> <img src="http://lib.ru/MILN/img00003.gif" width=377 height=259>
-                    <br>
+        <div class='links'>
+        <pre><a href='#requirements'>Requirements</a>
+<a href='#simple_usage'>Simple usage</a>
+    <a href='#html'>HTML</a>
+    <a href='#javascript'>Javascript</a>
+<a href='#options'>Options</a>
+    <a href='#active_tab'>Active tab</a>
+    <a href='#themes'>Themes</a>
+<a href='#theme_examples'>Theme examples</a>
+</pre>
+        </div>
 
-                </div>
+        <a name='requirements'><h2>Requirements</h2></a>
+        <ul>
+        <li>jQuery 1.2 or higher</li>
+        </ul>
+        <p>Make sure that jQuery is loaded. Download <code>jquery.cardtabs.js</code> and <code>jquery.cardtabs.css</code> and add them to your page:</p>
+        <pre><code>&lt;link rel='stylesheet' href='path/to/jquery.cardtabs.css'&gt;
+&lt;script type='text/javascript' src='path/to/jquery.cardtabs.js'&gt;&lt;/script&gt;</code></pre>
+        <a name='simple_usage'><h2>Simple usage</h2></a>
+
+        <div class='example'>
+        <div class='tabsholder1'>
+            <div data-tab="Meow">
+                Eat a plant, kill a hand sit and stare so stare out the window for lick arm hair. Then cats take over the world. Purr with tail in the air. Chirp at birds. Russian blue toy mouse squeak roll over so eat prawns daintily with a claw then lick paws clean wash down prawns with a lap of carnation milk then retire to the warmest spot on the couch to claw at the fabric before taking a catnap and find something else more interesting, so immediately regret falling into bathtub, purr for no reason, roll over and sun my belly.<br /><br /> Mesmerizing birds hiss and stare at nothing then run suddenly away hide when guests come over if it fits, i sits for loves cheeseburgers but rub whiskers on bare skin act innocent and tuxedo cats always looking dapper. I am the best sit in window and stare oooh, a bird, yum and chase ball of string and my left donut is missing, as is my right climb leg. Hate dog swat turds around the house claw drapes burrow under covers, but lie on your belly and purr when you are asleep. Climb leg going to catch the red dot today going to catch the red dot today scratch the furniture and brown cats with pink ears. Cough hairball on conveniently placed pants pelt around the house and up and down stairs chasing phantoms, or play riveting piece on synthesizer keyboard. Meow meow. Destroy couch. Meowwww. 
             </div>
-    	</div>
-        <br />
-        <h2>Themed usage</h2>
+            <div data-tab="Hipster tab">
+                Poke single-origin coffee chartreuse venmo seitan letterpress, sriracha hammock hot chicken cold-pressed church-key. Next level listicle taiyaki, heirloom mixtape literally bushwick keffiyeh narwhal etsy post-ironic jianbing ennui unicorn. Ugh schlitz hell of celiac put a bird on it. Post-ironic butcher everyday carry, iPhone af shaman cronut asymmetrical leggings hoodie vice air plant +1 keytar 3 wolf moon. 90's post-ironic cold-pressed succulents master cleanse. Jianbing neutra franzen, gochujang mumblecore heirloom coloring book literally pok pok 3 wolf moon brunch offal. Raw denim taxidermy lumbersexual, paleo venmo thundercats retro pitchfork chicharrones raclette forage banjo authentic ennui.
+                <br /><br />
+                Vaporware farm-to-table glossier brooklyn jean shorts retro green juice slow-carb. Enamel pin snackwave hexagon knausgaard. Gluten-free cloud bread raclette bespoke, roof party art party meh adaptogen pok pok try-hard. Mumblecore aesthetic occupy, schlitz knausgaard live-edge ugh authentic fashion axe vape mixtape pork belly tacos. Bushwick YOLO hashtag, live-edge jean shorts crucifix hexagon jianbing street art food truck semiotics. Deep v food truck fap roof party ennui. Mixtape vaporware shaman pickled snackwave YOLO.
+            </div>
+        </div>
+        </div>
+        
+
+        <a name='html'><h3>HTML</h3></a>
+        <p>The html is very simple. There is one container, with the actual tabs as divs, the <code>data-tab</code> attribute has to contain their name. The links on the top are automatically generated.</p>
+        <pre><code>&lt;div class='container'&gt;
+    &lt;div data-tab="Tab one"&gt;
+        /* contents of the first tab...  */
+    &lt;/div&gt;
+    &lt;div data-tab="Tab two"&gt;
+        /* contents of the second tab...  */
+    &lt;/div&gt;
+    &lt;div data-tab="Tab three"&gt;
+        /* contents of the third tab...  */
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<a name='javascript'><h3>JavaScript</h3></a>
+<p>Use the following code to initialize the tabs.</p>
+<pre><code>&lt;script type='text/javascript'&gt;
+    $('.container').cardTabs();
+&lt;/script&gt;</code></pre>
+<a name='options'><h2>Options</h2></a>
+<a name='active_tab'><h3>Manualy set the active tab</h3></a>
+<p>It is very simple to load another tab as the active tab. Just give that tab <code>active</code> as class:</p>
+<pre><code>&lt;div class='active' data-tab='Active tab'&gt;&lt;/div&gt;</code></pre>
+<a name='themes'><h3>Themes</h3></a>
+<p>Some themes are included in card tabs, to use them they have to be defined in the javascript, like this:</p>
+<pre><code>$('.container').cardTabs({'theme': 'dark'});</code></pre>
+<a name='theme_examples'><h2>Theme examples</h2></a>
+<a name='inset'><h3>Inset</h3></a>
+        <code>{'theme': 'inset'}</code><br /><br />
+        <div class='example'>
         <div class='tabsholder2'>
-            <div class='card-tabs-bar'>
-                <a data-tab="tab-1">Tab 1 themed</a>
-                <a data-tab="tab-2">Tab 2 themed</a>
+            <div data-tab="Meow">
+                Eat a plant, kill a hand sit and stare so stare out the window for lick arm hair. Then cats take over the world. Purr with tail in the air. Chirp at birds. Russian blue toy mouse squeak roll over so eat prawns daintily with a claw then lick paws clean wash down prawns with a lap of carnation milk then retire to the warmest spot on the couch to claw at the fabric before taking a catnap and find something else more interesting, so immediately regret falling into bathtub, purr for no reason, roll over and sun my belly.<br /><br /> Mesmerizing birds hiss and stare at nothing then run suddenly away hide when guests come over if it fits, i sits for loves cheeseburgers but rub whiskers on bare skin act innocent and tuxedo cats always looking dapper. I am the best sit in window and stare oooh, a bird, yum and chase ball of string and my left donut is missing, as is my right climb leg. Hate dog swat turds around the house claw drapes burrow under covers, but lie on your belly and purr when you are asleep. Climb leg going to catch the red dot today going to catch the red dot today scratch the furniture and brown cats with pink ears. Cough hairball on conveniently placed pants pelt around the house and up and down stairs chasing phantoms, or play riveting piece on synthesizer keyboard. Meow meow. Destroy couch. Meowwww. 
             </div>
-            <div class='card-tabs-stack'>
-                <div data-tab="tab-1">
-                   TAB 1111
-                </div>
-                <div data-tab="tab-2">
-                    TAB 2222        
-                </div>
+            <div data-tab="Hipster tab">
+                Poke single-origin coffee chartreuse venmo seitan letterpress, sriracha hammock hot chicken cold-pressed church-key. Next level listicle taiyaki, heirloom mixtape literally bushwick keffiyeh narwhal etsy post-ironic jianbing ennui unicorn. Ugh schlitz hell of celiac put a bird on it. Post-ironic butcher everyday carry, iPhone af shaman cronut asymmetrical leggings hoodie vice air plant +1 keytar 3 wolf moon. 90's post-ironic cold-pressed succulents master cleanse. Jianbing neutra franzen, gochujang mumblecore heirloom coloring book literally pok pok 3 wolf moon brunch offal. Raw denim taxidermy lumbersexual, paleo venmo thundercats retro pitchfork chicharrones raclette forage banjo authentic ennui.
+                <br /><br />
+                Vaporware farm-to-table glossier brooklyn jean shorts retro green juice slow-carb. Enamel pin snackwave hexagon knausgaard. Gluten-free cloud bread raclette bespoke, roof party art party meh adaptogen pok pok try-hard. Mumblecore aesthetic occupy, schlitz knausgaard live-edge ugh authentic fashion axe vape mixtape pork belly tacos. Bushwick YOLO hashtag, live-edge jean shorts crucifix hexagon jianbing street art food truck semiotics. Deep v food truck fap roof party ennui. Mixtape vaporware shaman pickled snackwave YOLO.
             </div>
+        </div>
+        </div>
+        <a name='graygreen'><h3>Graygreen</h3></a>
+        <code>{'theme': 'graygreen'}</code><br /><br />
+        <div class='example'>
+        <div class='tabsholder3'>
+            <div data-tab="Meow">
+                Eat a plant, kill a hand sit and stare so stare out the window for lick arm hair. Then cats take over the world. Purr with tail in the air. Chirp at birds. Russian blue toy mouse squeak roll over so eat prawns daintily with a claw then lick paws clean wash down prawns with a lap of carnation milk then retire to the warmest spot on the couch to claw at the fabric before taking a catnap and find something else more interesting, so immediately regret falling into bathtub, purr for no reason, roll over and sun my belly.<br /><br /> Mesmerizing birds hiss and stare at nothing then run suddenly away hide when guests come over if it fits, i sits for loves cheeseburgers but rub whiskers on bare skin act innocent and tuxedo cats always looking dapper. I am the best sit in window and stare oooh, a bird, yum and chase ball of string and my left donut is missing, as is my right climb leg. Hate dog swat turds around the house claw drapes burrow under covers, but lie on your belly and purr when you are asleep. Climb leg going to catch the red dot today going to catch the red dot today scratch the furniture and brown cats with pink ears. Cough hairball on conveniently placed pants pelt around the house and up and down stairs chasing phantoms, or play riveting piece on synthesizer keyboard. Meow meow. Destroy couch. Meowwww. 
+            </div>
+            <div data-tab="Hipster tab">
+                Poke single-origin coffee chartreuse venmo seitan letterpress, sriracha hammock hot chicken cold-pressed church-key. Next level listicle taiyaki, heirloom mixtape literally bushwick keffiyeh narwhal etsy post-ironic jianbing ennui unicorn. Ugh schlitz hell of celiac put a bird on it. Post-ironic butcher everyday carry, iPhone af shaman cronut asymmetrical leggings hoodie vice air plant +1 keytar 3 wolf moon. 90's post-ironic cold-pressed succulents master cleanse. Jianbing neutra franzen, gochujang mumblecore heirloom coloring book literally pok pok 3 wolf moon brunch offal. Raw denim taxidermy lumbersexual, paleo venmo thundercats retro pitchfork chicharrones raclette forage banjo authentic ennui.
+                <br /><br />
+                Vaporware farm-to-table glossier brooklyn jean shorts retro green juice slow-carb. Enamel pin snackwave hexagon knausgaard. Gluten-free cloud bread raclette bespoke, roof party art party meh adaptogen pok pok try-hard. Mumblecore aesthetic occupy, schlitz knausgaard live-edge ugh authentic fashion axe vape mixtape pork belly tacos. Bushwick YOLO hashtag, live-edge jean shorts crucifix hexagon jianbing street art food truck semiotics. Deep v food truck fap roof party ennui. Mixtape vaporware shaman pickled snackwave YOLO.
+            </div>
+        </div>
+        </div>
+        
+        <a name='wiki'><h3>Wiki</h3></a>
+        <code>{'theme': 'wiki'}</code><br /><br />
+        <div class='example'>
+        <div class='tabsholder4'>
+            <div data-tab="Article">
+                Eat a plant, kill a hand sit and stare so stare out the window for lick arm hair. Then cats take over the world. Purr with tail in the air. Chirp at birds. Russian blue toy mouse squeak roll over so eat prawns daintily with a claw then lick paws clean wash down prawns with a lap of carnation milk then retire to the warmest spot on the couch to claw at the fabric before taking a catnap and find something else more interesting, so immediately regret falling into bathtub, purr for no reason, roll over and sun my belly.<br /><br /> Mesmerizing birds hiss and stare at nothing then run suddenly away hide when guests come over if it fits, i sits for loves cheeseburgers but rub whiskers on bare skin act innocent and tuxedo cats always looking dapper. I am the best sit in window and stare oooh, a bird, yum and chase ball of string and my left donut is missing, as is my right climb leg. Hate dog swat turds around the house claw drapes burrow under covers, but lie on your belly and purr when you are asleep. Climb leg going to catch the red dot today going to catch the red dot today scratch the furniture and brown cats with pink ears. Cough hairball on conveniently placed pants pelt around the house and up and down stairs chasing phantoms, or play riveting piece on synthesizer keyboard. Meow meow. Destroy couch. Meowwww. 
+            </div>
+            <div data-tab="Edit">
+                Poke single-origin coffee chartreuse venmo seitan letterpress, sriracha hammock hot chicken cold-pressed church-key. Next level listicle taiyaki, heirloom mixtape literally bushwick keffiyeh narwhal etsy post-ironic jianbing ennui unicorn. Ugh schlitz hell of celiac put a bird on it. Post-ironic butcher everyday carry, iPhone af shaman cronut asymmetrical leggings hoodie vice air plant +1 keytar 3 wolf moon. 90's post-ironic cold-pressed succulents master cleanse. Jianbing neutra franzen, gochujang mumblecore heirloom coloring book literally pok pok 3 wolf moon brunch offal. Raw denim taxidermy lumbersexual, paleo venmo thundercats retro pitchfork chicharrones raclette forage banjo authentic ennui.
+                <br /><br />
+                Vaporware farm-to-table glossier brooklyn jean shorts retro green juice slow-carb. Enamel pin snackwave hexagon knausgaard. Gluten-free cloud bread raclette bespoke, roof party art party meh adaptogen pok pok try-hard. Mumblecore aesthetic occupy, schlitz knausgaard live-edge ugh authentic fashion axe vape mixtape pork belly tacos. Bushwick YOLO hashtag, live-edge jean shorts crucifix hexagon jianbing street art food truck semiotics. Deep v food truck fap roof party ennui. Mixtape vaporware shaman pickled snackwave YOLO.
+            </div>
+        </div>
+        </div>
+
+
+        <div class='footer'>
+            &copy; 2017 - Thomas de Roo
         </div>
 
         <script type='text/javascript'>
             $('.tabsholder1').cardTabs();
             $('.tabsholder2').cardTabs({theme: 'inset'});
+            $('.tabsholder3').cardTabs({theme: 'graygreen'});
+            $('.tabsholder4').cardTabs({theme: 'wiki'});
         </script>
         </div>
     </body>

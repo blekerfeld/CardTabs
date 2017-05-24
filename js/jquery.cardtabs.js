@@ -14,6 +14,18 @@ jQuery.fn.cardTabs = function(options){
         theme: '',
      }, options );
 
+	// Initializing
+	var htmlInner = $(this).html();
+	var stack = $('<div />').addClass('card-tabs-stack').html(htmlInner);
+	var bar = $('<div />').addClass('card-tabs-bar');
+
+	$('.' + mainClass).children('div[data-tab]').each(function(){
+		bar.append($('<a />').attr('href', 'javascript:void();').data('tab', $(this).data('tab')).append($(this).data('tab')));
+	});
+
+	$('.' + mainClass).html('').append(bar).append(stack);
+
+
 	// Fixing the theme
 	if(settings.theme != ''){
 		$('.' + mainClass + ' .card-tabs-bar').addClass(settings.theme);
