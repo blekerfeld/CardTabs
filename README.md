@@ -6,7 +6,7 @@ Card tabs is yet another minimal jQuery plugin that allows for very simple tabs.
 
 ## Simple usage
 
-Make sure that jQuery is loaded. Download `jquery.cardtabs.js` and `jquery.cardtabs.css` and add them to your page:
+Make sure that jQuery is loaded. Download `jquery.cardtabs.js` and `jquery.cardtabs.css` from the [latest release (v. 1.0)](https://github.com/blekerfeld/CardTabs/releases/tag/v1.0) and add them to your page:
 
 ```
 
