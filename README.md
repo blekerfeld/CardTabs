@@ -1,5 +1,6 @@
-# CardTabs
-Card tabs is yet another minimal jQuery plugin that allows for very simple tabs. The usage is explained below, click [here](http://blekerfeld.github.io/CardTabs) for a demo.
+
+# [CardTabs](https://cardtabs.js.org)
+CardTabs is yet another minimal jQuery plugin that allows for very simple tabs. The usage is explained below, click [here](https://cardtabs.js.org) for a demo. CardTabs is licensed under MIT. 
 
 ## Requirements
 * jQuery 1.2 or higher
