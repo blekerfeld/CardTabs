@@ -7,12 +7,12 @@ CardTabs is yet another ultra-light jQuery plugin that allows for very simple ta
 
 ## Simple usage
 
-Make sure that jQuery is loaded. Download `jquery.cardtabs.js` and `jquery.cardtabs.css` from the [latest release (v. 1.0)](https://github.com/blekerfeld/CardTabs/releases/tag/v1.0) and add them to your page:
+Make sure that jQuery is loaded. Download `jquery.cardtabs.js` and `jquery.cardtabs.css` by cloning the repo or downloading the [latest release (v. 1.0)](https://github.com/blekerfeld/CardTabs/releases/tag/v1.0) and add them to your page:
 
-```
+```html
 
-<link rel='stylesheet' href='path/to/jquery.cardtabs.css'>
-<script type='text/javascript' src='path/to/jquery.cardtabs.js'></script>
+<link rel='stylesheet' href='jquery.cardtabs.css'>
+<script type='text/javascript' src='jquery.cardtabs.js'></script>
 
 ```
 
