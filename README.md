@@ -1,6 +1,6 @@
 
 # [CardTabs](https://cardtabs.js.org)
-CardTabs is yet another minimal jQuery plugin that allows for very simple tabs. The usage is explained below, click [here](https://cardtabs.js.org) for a demo. CardTabs is licensed under MIT. 
+CardTabs is yet another ultra-light jQuery plugin that allows for very simple tabs. The usage is explained below, click [here](https://cardtabs.js.org) for a demo. CardTabs is licensed under MIT. 
 
 ## Requirements
 * jQuery 1.2 or higher
@@ -62,3 +62,7 @@ Some themes are included in card tabs, to use them they have to be defined in th
 ```
 $('.container').cardTabs({'theme': 'dark'});
 ```
+
+## Creating themes
+
+Themes are applied by a single css class (the theme name) on the generated elements. Making your own compatible theme is thus not that hard. You just need to style these elements: `div.card-tabs-bar.yourthemename` (the link bar), `div.card-tabs-bar.yourthemename a` (a link in the link bar), `div.card-tabs-bar.yourthemename a.active` (the active tab in the bar) and `div.card-tabs-stack.yourthemename div[data-tab]` (the shown tab itself).
