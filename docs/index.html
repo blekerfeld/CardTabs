@@ -21,6 +21,7 @@
 <a href='#options'>Options</a>
     <a href='#active_tab'>Active tab</a>
     <a href='#themes'>Themes</a>
+<a href='#crethe'>Creating themes</a>
 <a href='#theme_examples'>Theme examples</a>
 </pre>
         </div>
@@ -74,6 +75,31 @@
 <a name='themes'><h3>Themes</h3></a>
 <p>Some themes are included in card tabs, to use them they have to be defined in the javascript, like this:</p>
 <pre><code>$('.container').cardTabs({'theme': 'dark'});</code></pre>
+
+
+<a name='crethe'><h2>Creating themes</h2></a>
+<p>Themes are applied by a single css class (the theme name) on the generated elements. Making your own compatible theme is thus not that hard. You just need to style these elements: <code>div.card-tabs-bar.yourthemename</code> (the link bar), <code>div.card-tabs-bar.yourthemename a</code> (a link in the link bar), <code>div.card-tabs-bar.yourthemename a.active</code> (the active tab in the bar) and <code>div.card-tabs-stack.yourthemename div[data-tab]</code> (the shown tab itself).</p>
+<pre><code class="language-css">
+div.card-tabs-bar.yourthemename{ /* the link bar */
+
+}
+
+div.card-tabs-bar.yourthemename a { /* A link in the link bar */
+
+}
+
+div.card-tabs-bar.yourthemename a.active  { /* The active tab link */ 
+
+}
+
+div.card-tabs-stack.yourthemename div[data-tab] { /* The shown tab itself */
+
+}
+</code></pre>
+<p>Your theme can be loaded like this then:</p>
+<pre><code class="language-html">$('.container').cardTabs({'theme': 'yourthemename'});</code></pre>
+
+
 <a name='theme_examples'><h2>Theme examples</h2></a>
 <a name='inset'><h3>Inset</h3></a>
         <code>{'theme': 'inset'}</code><br /><br />
