@@ -1,94 +1,92 @@
 
 # [CardTabs](https://cardtabs.js.org)
-CardTabs is yet another ultra-light jQuery plugin that allows for very simple tabs. The usage is explained below, click [here](https://cardtabs.js.org) for a demo. CardTabs is licensed under MIT. 
+CardTabs is a tiny, dependency-free tab widget built with plain JavaScript and modern CSS. It keeps the original lightweight API but removes jQuery from the implementation.
 
 ## Requirements
-* jQuery 1.2 or higher
+* No dependencies
 
 ## Simple usage
 
-Make sure that jQuery is loaded. Get a hold of `js/jquery.cardtabs.js` and `css/jquery.cardtabs.css` by cloning the repo or downloading the [latest release (v. 1.0)](https://github.com/blekerfeld/CardTabs/releases/tag/v1.0) and add them to your page:
+Load the stylesheet and script and initialize the tabs on one or more containers:
 
 ```html
+<link rel="stylesheet" href="assets_path/css/cardtabs.css">
+<script src="assets_path/js/cardtabs.js"></script>
 
-<link rel='stylesheet' href='assets_path/css/jquery.cardtabs.css'>
-<script type='text/javascript' src='assets_path/js/jquery.cardtabs.js'></script>
-
-```
-
-### HTML 
-
-The html is very simple. There is one container, with the actual tabs as divs, the `data-tab` attribute has to contain their name. The links on the top are automatically generated.
-
-
-
-```html
-<div class='container'>
-    <div data-tab="Tab one">
-    	/* contents of the first tab...  */
-    </div>
-    <div data-tab="Tab two">
-        /* contents of the second tab...  */
-    </div>
-    <div data-tab="Tab three">
-        /* contents of the third tab...  */
-    </div>
-</div>
-
-```
-
-### JavaScript
-
-Use the following code to initialize the tabs.
-
-```html
-<script type='text/javascript'>
-$('.container').cardTabs();
+<script>
+  document.querySelectorAll('.container').forEach((element) => {
+    element.cardTabs();
+  });
 </script>
+```
+
+You can also use the global helper:
+
+```html
+<script>
+  cardTabs('.container');
+</script>
+```
+
+### HTML
+
+Each tab panel is a direct child of the container and uses a `data-tab` attribute for its label.
+
+```html
+<div class="container">
+  <div data-tab="Tab one">
+    Content for the first tab.
+  </div>
+  <div data-tab="Tab two">
+    Content for the second tab.
+  </div>
+  <div data-tab="Tab three">
+    Content for the third tab.
+  </div>
+</div>
+```
+
+### JavaScript API
+
+```js
+const target = document.querySelector('.container');
+CardTabs.init(target);
+
+// or
+cardTabs('.container', { theme: 'inset' });
 ```
 
 ## Options
 
-### Manualy set the active tab
-It is very simple to load another tab as the active tab. Just give that tab `active` as class:
+### Manually set the active tab
+Add the `active` class to the panel you want open by default:
 
 ```html
-<div class='active' data-tab='Active tab'></div>
+<div class="active" data-tab="Active tab">
+  This tab opens first.
+</div>
 ```
 
 ### Themes
-Some themes are included in card tabs, to use them they have to be defined in the javascript, like this:
+The included themes are still supported through the `theme` option:
 
-```html
-$('.container').cardTabs({'theme': 'inset'});
+```js
+cardTabs('.container', { theme: 'inset' });
 ```
 
 ## Creating themes
 
-Themes are applied by a single css class (the theme name) on the generated elements. Making your own compatible theme is thus not that hard. You just need to style these elements: `div.card-tabs-bar.yourthemename` (the link bar), `div.card-tabs-bar.yourthemename a` (a link in the link bar), `div.card-tabs-bar.yourthemename a.active` (the active tab in the bar) and `div.card-tabs-stack.yourthemename div[data-tab]` (the shown tab itself).
+You can target the generated elements with the theme name as a CSS class. For example:
 
 ```css
-
-div.card-tabs-bar.yourthemename{ /* the link bar */
-    
-}
-
-div.card-tabs-bar.yourthemename a { /* A link in the link bar */
-
-}
-
-div.card-tabs-bar.yourthemename a.active  { /* The active tab link */ 
-
-}
-
-div.card-tabs-stack.yourthemename div[data-tab] { /* The shown tab itself */
-
-}
-
+.card-tabs-bar.yourthemename { }
+.card-tabs-bar.yourthemename .card-tabs-tab { }
+.card-tabs-bar.yourthemename .card-tabs-tab.active { }
+.card-tabs-stack.yourthemename .card-tabs-panel { }
 ```
 
-Your theme can be loaded like this then:
+Then initialize it with:
 
-```html
-$('.container').cardTabs({'theme': 'yourthemename'});
+```js
+cardTabs('.container', { theme: 'yourthemename' });
 ```

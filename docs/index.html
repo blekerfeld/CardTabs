@@ -1,164 +1,165 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <title>Card Tabs demo</title>
-        <link rel='stylesheet' href='jquery.cardtabs.css'>
-        <link rel='stylesheet' href='demo.css'>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <script async defer src="https://buttons.github.io/buttons.js"></script>
-        <script type='text/javascript' src='jquery.cardtabs.js'></script>
-    </head>
-    <body class='markdown-body'>
-        <div class='holder'>
-        <a class='github' href='http://github.com/blekerfeld/CardTabs/'>Open on Github</a>
-        <h1>CardTabs</h1>
-        CardTabs is yet another ultra-light jQuery plugin that allows for very simple tabs. The usage is explained below, click here for a demo. CardTabs is licensed under MIT.<br /><br />
-        <a class="github-button" href="https://github.com/blekerfeld/cardtabs" data-size="large" data-show-count="true" aria-label="Star blekerfeld/cardtabs on GitHub">Star</a> <!-- Place this tag where you want the button to render. -->
-<a class="github-button" href="https://github.com/blekerfeld/cardtabs/archive/master.zip" data-icon="octicon-cloud-download" data-size="large" aria-label="Download blekerfeld/cardtabs on GitHub">Download</a><br /><br />
-        <div class='links'>
-        <pre><a href='#requirements'>Requirements</a>
-<a href='#simple_usage'>Simple usage</a>
-    <a href='#html'>HTML</a>
-    <a href='#javascript'>Javascript</a>
-<a href='#options'>Options</a>
-    <a href='#active_tab'>Active tab</a>
-    <a href='#themes'>Themes</a>
-<a href='#crethe'>Creating themes</a>
-<a href='#theme_examples'>Theme examples</a>
-</pre>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CardTabs — Minimal vanilla tabs</title>
+    <meta name="description" content="CardTabs is a lightweight, dependency-free tab component for simple tabbed interfaces.">
+    <link rel="stylesheet" href="../css/cardtabs.css">
+    <link rel="stylesheet" href="demo.css">
+    <script src="../js/cardtabs.js" defer></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        document.querySelectorAll('.demo-tabs').forEach((element) => {
+          element.cardTabs();
+        });
+
+        document.querySelectorAll('.theme-demo').forEach((element) => {
+          element.cardTabs({ theme: element.dataset.theme || '' });
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="hero">
+        <nav class="topbar">
+          <div class="brand">CardTabs</div>
+          <div class="actions">
+            <a href="https://github.com/blekerfeld/CardTabs" target="_blank" rel="noreferrer">GitHub</a>
+          </div>
+        </nav>
+
+        <div class="hero-copy">
+          <p class="eyebrow">Vanilla JavaScript + CSS</p>
+          <h1>Simple tabs without the weight.</h1>
+          <p>
+            CardTabs is a tiny, dependency-free tab component for quick, clean interfaces.
+            It keeps the core idea simple: a container, tab labels, and panel content.
+          </p>
+          <div class="cta-row">
+            <a class="button primary" href="#getting-started">Get started</a>
+            <a class="button secondary" href="https://github.com/blekerfeld/CardTabs/archive/refs/heads/master.zip">Download</a>
+          </div>
         </div>
+      </header>
 
-        <a name='requirements'><h2>Requirements</h2></a>
-        <ul>
-        <li>jQuery 1.2 or higher</li>
-        </ul>
-        <p>Make sure that jQuery is loaded. Download <code>jquery.cardtabs.js</code> and <code>jquery.cardtabs.css</code> and add them to your page:</p>
-        <pre><code>&lt;link rel='stylesheet' href='path/to/jquery.cardtabs.css'&gt;
-&lt;script type='text/javascript' src='path/to/jquery.cardtabs.js'&gt;&lt;/script&gt;</code></pre>
-        <a name='simple_usage'><h2>Simple usage</h2></a>
+      <main class="content">
+        <section id="getting-started" class="section">
+          <div class="section-heading">
+            <p class="eyebrow">Getting started</p>
+            <h2>Install in seconds</h2>
+          </div>
 
-        <div class='example'>
-        <div class='tabsholder1'>
-            <div data-tab="Meow">
-                Eat a plant, kill a hand sit and stare so stare out the window for lick arm hair. Then cats take over the world. Purr with tail in the air. Chirp at birds. Russian blue toy mouse squeak roll over so eat prawns daintily with a claw then lick paws clean wash down prawns with a lap of carnation milk then retire to the warmest spot on the couch to claw at the fabric before taking a catnap and find something else more interesting, so immediately regret falling into bathtub, purr for no reason, roll over and sun my belly.<br /><br /> Mesmerizing birds hiss and stare at nothing then run suddenly away hide when guests come over if it fits, i sits for loves cheeseburgers but rub whiskers on bare skin act innocent and tuxedo cats always looking dapper. I am the best sit in window and stare oooh, a bird, yum and chase ball of string and my left donut is missing, as is my right climb leg. Hate dog swat turds around the house claw drapes burrow under covers, but lie on your belly and purr when you are asleep. Climb leg going to catch the red dot today going to catch the red dot today scratch the furniture and brown cats with pink ears. Cough hairball on conveniently placed pants pelt around the house and up and down stairs chasing phantoms, or play riveting piece on synthesizer keyboard. Meow meow. Destroy couch. Meowwww. 
+          <div class="card-demo">
+            <div class="demo-tabs" data-cardtabs>
+              <div data-tab="Install">
+                <pre><code>&lt;link rel="stylesheet" href="path/to/jquery.cardtabs.css"&gt;
+&lt;script src="path/to/jquery.cardtabs.js" defer&gt;&lt;/script&gt;</code></pre>
+              </div>
+              <div data-tab="HTML">
+                <pre><code>&lt;div class="container"&gt;
+  &lt;div data-tab="Overview"&gt;...&lt;/div&gt;
+  &lt;div data-tab="Details"&gt;...&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+              </div>
+              <div data-tab="JavaScript">
+                <pre><code>document.querySelectorAll('.container').forEach((el) =&gt; el.cardTabs());
+// or
+cardTabs('.container');</code></pre>
+              </div>
             </div>
-            <div data-tab="Hipster tab">
-                Poke single-origin coffee chartreuse venmo seitan letterpress, sriracha hammock hot chicken cold-pressed church-key. Next level listicle taiyaki, heirloom mixtape literally bushwick keffiyeh narwhal etsy post-ironic jianbing ennui unicorn. Ugh schlitz hell of celiac put a bird on it. Post-ironic butcher everyday carry, iPhone af shaman cronut asymmetrical leggings hoodie vice air plant +1 keytar 3 wolf moon. 90's post-ironic cold-pressed succulents master cleanse. Jianbing neutra franzen, gochujang mumblecore heirloom coloring book literally pok pok 3 wolf moon brunch offal. Raw denim taxidermy lumbersexual, paleo venmo thundercats retro pitchfork chicharrones raclette forage banjo authentic ennui.
-                <br /><br />
-                Vaporware farm-to-table glossier brooklyn jean shorts retro green juice slow-carb. Enamel pin snackwave hexagon knausgaard. Gluten-free cloud bread raclette bespoke, roof party art party meh adaptogen pok pok try-hard. Mumblecore aesthetic occupy, schlitz knausgaard live-edge ugh authentic fashion axe vape mixtape pork belly tacos. Bushwick YOLO hashtag, live-edge jean shorts crucifix hexagon jianbing street art food truck semiotics. Deep v food truck fap roof party ennui. Mixtape vaporware shaman pickled snackwave YOLO.
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="section-heading">
+            <p class="eyebrow">Usage</p>
+            <h2>Keep your markup simple</h2>
+          </div>
+
+          <div class="two-column">
+            <div class="code-block">
+              <h3>HTML</h3>
+              <pre><code>&lt;div class="example-tabs"&gt;
+  &lt;div data-tab="Tab one"&gt;First tab content&lt;/div&gt;
+  &lt;div data-tab="Tab two"&gt;Second tab content&lt;/div&gt;
+  &lt;div data-tab="Tab three"&gt;Third tab content&lt;/div&gt;
+&lt;/div&gt;</code></pre>
             </div>
-        </div>
-        </div>
-        
 
-        <a name='html'><h3>HTML</h3></a>
-        <p>The html is very simple. There is one container, with the actual tabs as divs, the <code>data-tab</code> attribute has to contain their name. The links on the top are automatically generated.</p>
-        <pre><code>&lt;div class='container'&gt;
-    &lt;div data-tab="Tab one"&gt;
-        /* contents of the first tab...  */
-    &lt;/div&gt;
-    &lt;div data-tab="Tab two"&gt;
-        /* contents of the second tab...  */
-    &lt;/div&gt;
-    &lt;div data-tab="Tab three"&gt;
-        /* contents of the third tab...  */
-    &lt;/div&gt;
-&lt;/div&gt;
-</code></pre>
-<a name='javascript'><h3>JavaScript</h3></a>
-<p>Use the following code to initialize the tabs.</p>
-<pre><code>&lt;script type='text/javascript'&gt;
-    $('.container').cardTabs();
-&lt;/script&gt;</code></pre>
-<a name='options'><h2>Options</h2></a>
-<a name='active_tab'><h3>Manualy set the active tab</h3></a>
-<p>It is very simple to load another tab as the active tab. Just give that tab <code>active</code> as class:</p>
-<pre><code>&lt;div class='active' data-tab='Active tab'&gt;&lt;/div&gt;</code></pre>
-<a name='themes'><h3>Themes</h3></a>
-<p>Some themes are included in card tabs, to use them they have to be defined in the javascript, like this:</p>
-<pre><code>$('.container').cardTabs({'theme': 'dark'});</code></pre>
+            <div class="code-block">
+              <h3>JavaScript</h3>
+              <pre><code>const tabs = document.querySelector('.example-tabs');
+tabs.cardTabs();
 
+// or
+cardTabs('.example-tabs', { theme: 'inset' });</code></pre>
+            </div>
+          </div>
+        </section>
 
-<a name='crethe'><h2>Creating themes</h2></a>
-<p>Themes are applied by a single css class (the theme name) on the generated elements. Making your own compatible theme is thus not that hard. You just need to style these elements: <code>div.card-tabs-bar.yourthemename</code> (the link bar), <code>div.card-tabs-bar.yourthemename a</code> (a link in the link bar), <code>div.card-tabs-bar.yourthemename a.active</code> (the active tab in the bar) and <code>div.card-tabs-stack.yourthemename div[data-tab]</code> (the shown tab itself).</p>
-<pre><code class="language-css">
-div.card-tabs-bar.yourthemename{ /* the link bar */
+        <section class="section">
+          <div class="section-heading">
+            <p class="eyebrow">Themes</p>
+            <h2>Small set of built-in styles</h2>
+          </div>
 
+          <div class="theme-showcase">
+            <div class="theme-demo" data-theme="inset">
+              <div data-tab="Inset">
+                Soft and minimal styling for neutral interfaces.
+              </div>
+              <div data-tab="Details">
+                Great for dashboards, docs, and low-contrast applications.
+              </div>
+            </div>
+
+            <div class="theme-demo" data-theme="graygreen">
+              <div data-tab="Green">
+                Clean, fresh, and slightly more prominent for content sections.
+              </div>
+              <div data-tab="Notes">
+                A practical choice when you want calm visual hierarchy.
+              </div>
+            </div>
+
+            <div class="theme-demo" data-theme="wiki">
+              <div data-tab="Wiki">
+                A classic editorial feel with subtle blue tones and structured tabs.
+              </div>
+              <div data-tab="Reference">
+                Useful for documentation pages and knowledge bases.
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="section-heading">
+            <p class="eyebrow">Customization</p>
+            <h2>Make it your own</h2>
+          </div>
+
+          <div class="code-block full-width">
+            <pre><code>.card-tabs-bar.your-theme {
+  /* bar styles */
 }
 
-div.card-tabs-bar.yourthemename a { /* A link in the link bar */
-
+.card-tabs-bar.your-theme .card-tabs-tab {
+  /* tab button styles */
 }
 
-div.card-tabs-bar.yourthemename a.active  { /* The active tab link */ 
-
+.card-tabs-bar.your-theme .card-tabs-tab.active {
+  /* active state */
 }
 
-div.card-tabs-stack.yourthemename div[data-tab] { /* The shown tab itself */
-
-}
-</code></pre>
-<p>Your theme can be loaded like this then:</p>
-<pre><code class="language-html">$('.container').cardTabs({'theme': 'yourthemename'});</code></pre>
-
-
-<a name='theme_examples'><h2>Theme examples</h2></a>
-<a name='inset'><h3>Inset</h3></a>
-        <code>{'theme': 'inset'}</code><br /><br />
-        <div class='example'>
-        <div class='tabsholder2'>
-            <div data-tab="Meow">
-                Eat a plant, kill a hand sit and stare so stare out the window for lick arm hair. Then cats take over the world. Purr with tail in the air. Chirp at birds. Russian blue toy mouse squeak roll over so eat prawns daintily with a claw then lick paws clean wash down prawns with a lap of carnation milk then retire to the warmest spot on the couch to claw at the fabric before taking a catnap and find something else more interesting, so immediately regret falling into bathtub, purr for no reason, roll over and sun my belly.<br /><br /> Mesmerizing birds hiss and stare at nothing then run suddenly away hide when guests come over if it fits, i sits for loves cheeseburgers but rub whiskers on bare skin act innocent and tuxedo cats always looking dapper. I am the best sit in window and stare oooh, a bird, yum and chase ball of string and my left donut is missing, as is my right climb leg. Hate dog swat turds around the house claw drapes burrow under covers, but lie on your belly and purr when you are asleep. Climb leg going to catch the red dot today going to catch the red dot today scratch the furniture and brown cats with pink ears. Cough hairball on conveniently placed pants pelt around the house and up and down stairs chasing phantoms, or play riveting piece on synthesizer keyboard. Meow meow. Destroy couch. Meowwww. 
-            </div>
-            <div data-tab="Hipster tab">
-                Poke single-origin coffee chartreuse venmo seitan letterpress, sriracha hammock hot chicken cold-pressed church-key. Next level listicle taiyaki, heirloom mixtape literally bushwick keffiyeh narwhal etsy post-ironic jianbing ennui unicorn. Ugh schlitz hell of celiac put a bird on it. Post-ironic butcher everyday carry, iPhone af shaman cronut asymmetrical leggings hoodie vice air plant +1 keytar 3 wolf moon. 90's post-ironic cold-pressed succulents master cleanse. Jianbing neutra franzen, gochujang mumblecore heirloom coloring book literally pok pok 3 wolf moon brunch offal. Raw denim taxidermy lumbersexual, paleo venmo thundercats retro pitchfork chicharrones raclette forage banjo authentic ennui.
-                <br /><br />
-                Vaporware farm-to-table glossier brooklyn jean shorts retro green juice slow-carb. Enamel pin snackwave hexagon knausgaard. Gluten-free cloud bread raclette bespoke, roof party art party meh adaptogen pok pok try-hard. Mumblecore aesthetic occupy, schlitz knausgaard live-edge ugh authentic fashion axe vape mixtape pork belly tacos. Bushwick YOLO hashtag, live-edge jean shorts crucifix hexagon jianbing street art food truck semiotics. Deep v food truck fap roof party ennui. Mixtape vaporware shaman pickled snackwave YOLO.
-            </div>
-        </div>
-        </div>
-        <a name='graygreen'><h3>Graygreen</h3></a>
-        <code>{'theme': 'graygreen'}</code><br /><br />
-        <div class='example'>
-        <div class='tabsholder3'>
-            <div data-tab="Meow">
-                Eat a plant, kill a hand sit and stare so stare out the window for lick arm hair. Then cats take over the world. Purr with tail in the air. Chirp at birds. Russian blue toy mouse squeak roll over so eat prawns daintily with a claw then lick paws clean wash down prawns with a lap of carnation milk then retire to the warmest spot on the couch to claw at the fabric before taking a catnap and find something else more interesting, so immediately regret falling into bathtub, purr for no reason, roll over and sun my belly.<br /><br /> Mesmerizing birds hiss and stare at nothing then run suddenly away hide when guests come over if it fits, i sits for loves cheeseburgers but rub whiskers on bare skin act innocent and tuxedo cats always looking dapper. I am the best sit in window and stare oooh, a bird, yum and chase ball of string and my left donut is missing, as is my right climb leg. Hate dog swat turds around the house claw drapes burrow under covers, but lie on your belly and purr when you are asleep. Climb leg going to catch the red dot today going to catch the red dot today scratch the furniture and brown cats with pink ears. Cough hairball on conveniently placed pants pelt around the house and up and down stairs chasing phantoms, or play riveting piece on synthesizer keyboard. Meow meow. Destroy couch. Meowwww. 
-            </div>
-            <div data-tab="Hipster tab">
-                Poke single-origin coffee chartreuse venmo seitan letterpress, sriracha hammock hot chicken cold-pressed church-key. Next level listicle taiyaki, heirloom mixtape literally bushwick keffiyeh narwhal etsy post-ironic jianbing ennui unicorn. Ugh schlitz hell of celiac put a bird on it. Post-ironic butcher everyday carry, iPhone af shaman cronut asymmetrical leggings hoodie vice air plant +1 keytar 3 wolf moon. 90's post-ironic cold-pressed succulents master cleanse. Jianbing neutra franzen, gochujang mumblecore heirloom coloring book literally pok pok 3 wolf moon brunch offal. Raw denim taxidermy lumbersexual, paleo venmo thundercats retro pitchfork chicharrones raclette forage banjo authentic ennui.
-                <br /><br />
-                Vaporware farm-to-table glossier brooklyn jean shorts retro green juice slow-carb. Enamel pin snackwave hexagon knausgaard. Gluten-free cloud bread raclette bespoke, roof party art party meh adaptogen pok pok try-hard. Mumblecore aesthetic occupy, schlitz knausgaard live-edge ugh authentic fashion axe vape mixtape pork belly tacos. Bushwick YOLO hashtag, live-edge jean shorts crucifix hexagon jianbing street art food truck semiotics. Deep v food truck fap roof party ennui. Mixtape vaporware shaman pickled snackwave YOLO.
-            </div>
-        </div>
-        </div>
-        
-        <a name='wiki'><h3>Wiki</h3></a>
-        <code>{'theme': 'wiki'}</code><br /><br />
-        <div class='example'>
-        <div class='tabsholder4'>
-            <div data-tab="Article">
-                Eat a plant, kill a hand sit and stare so stare out the window for lick arm hair. Then cats take over the world. Purr with tail in the air. Chirp at birds. Russian blue toy mouse squeak roll over so eat prawns daintily with a claw then lick paws clean wash down prawns with a lap of carnation milk then retire to the warmest spot on the couch to claw at the fabric before taking a catnap and find something else more interesting, so immediately regret falling into bathtub, purr for no reason, roll over and sun my belly.<br /><br /> Mesmerizing birds hiss and stare at nothing then run suddenly away hide when guests come over if it fits, i sits for loves cheeseburgers but rub whiskers on bare skin act innocent and tuxedo cats always looking dapper. I am the best sit in window and stare oooh, a bird, yum and chase ball of string and my left donut is missing, as is my right climb leg. Hate dog swat turds around the house claw drapes burrow under covers, but lie on your belly and purr when you are asleep. Climb leg going to catch the red dot today going to catch the red dot today scratch the furniture and brown cats with pink ears. Cough hairball on conveniently placed pants pelt around the house and up and down stairs chasing phantoms, or play riveting piece on synthesizer keyboard. Meow meow. Destroy couch. Meowwww. 
-            </div>
-            <div data-tab="Edit">
-                Poke single-origin coffee chartreuse venmo seitan letterpress, sriracha hammock hot chicken cold-pressed church-key. Next level listicle taiyaki, heirloom mixtape literally bushwick keffiyeh narwhal etsy post-ironic jianbing ennui unicorn. Ugh schlitz hell of celiac put a bird on it. Post-ironic butcher everyday carry, iPhone af shaman cronut asymmetrical leggings hoodie vice air plant +1 keytar 3 wolf moon. 90's post-ironic cold-pressed succulents master cleanse. Jianbing neutra franzen, gochujang mumblecore heirloom coloring book literally pok pok 3 wolf moon brunch offal. Raw denim taxidermy lumbersexual, paleo venmo thundercats retro pitchfork chicharrones raclette forage banjo authentic ennui.
-                <br /><br />
-                Vaporware farm-to-table glossier brooklyn jean shorts retro green juice slow-carb. Enamel pin snackwave hexagon knausgaard. Gluten-free cloud bread raclette bespoke, roof party art party meh adaptogen pok pok try-hard. Mumblecore aesthetic occupy, schlitz knausgaard live-edge ugh authentic fashion axe vape mixtape pork belly tacos. Bushwick YOLO hashtag, live-edge jean shorts crucifix hexagon jianbing street art food truck semiotics. Deep v food truck fap roof party ennui. Mixtape vaporware shaman pickled snackwave YOLO.
-            </div>
-        </div>
-        </div>
-
-
-        <div class='footer'>
-            &copy; 2017 - Emma de Roo
-        </div>
-
-        <script type='text/javascript'>
-            $('.tabsholder1').cardTabs();
-            $('.tabsholder2').cardTabs({theme: 'inset'});
-            $('.tabsholder3').cardTabs({theme: 'graygreen'});
-            $('.tabsholder4').cardTabs({theme: 'wiki'});
-        </script>
-        </div>
-    </body>
+.card-tabs-stack.your-theme .card-tabs-panel {
+  /* panel styles */
+}</code></pre>
+          </div>
+        </section>
+      </main>
+    </div>
+  </body>
 </html>
